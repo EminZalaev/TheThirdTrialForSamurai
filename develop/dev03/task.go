@@ -1,5 +1,12 @@
 package main
 
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
+)
+
 /*
 === Утилита sort ===
 
@@ -26,5 +33,13 @@ package main
 */
 
 func main() {
-
+	file, err := os.Open("input.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	data, err := ioutil.ReadAll(file)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Data as string: %s\n", data)
 }
