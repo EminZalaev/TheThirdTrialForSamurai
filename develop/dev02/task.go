@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"unicode"
 )
@@ -48,4 +49,18 @@ func unpackString(strings string) string {
 		stringEdited += string(runeString[len(runeString)-1])
 	}
 	return stringEdited
+}
+
+func main() {
+	firstString := "a4bc2d5e"
+	fmt.Println(unpackString(firstString))
+
+	secondString := "abcd"
+	fmt.Println(unpackString(secondString))
+
+	thirdString := "45"
+	fmt.Println(unpackString(thirdString))
+
+	fourthString := ""
+	fmt.Println(unpackString(fourthString))
 }
