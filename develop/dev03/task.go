@@ -1,10 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"io/ioutil"
-	"log"
+	"io"
 	"os"
+	"sort"
 )
 
 /*
@@ -32,14 +33,59 @@ import (
 Программа должна проходить все тесты. Код должен проходить проверки go vet и golint.
 */
 
+func readLines(file string) (lines []string, err error) {
+	f, err := os.Open(file)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+	r := bufio.NewReader(f)
+	for {
+		const delim = '\n'
+		line, err := r.ReadString(delim)
+		if err == nil || len(line) > 0 {
+			if err != nil {
+				line += string(delim)
+			}
+			lines = append(lines, line)
+		}
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			return nil, err
+		}
+	}
+	return lines, nil
+}
+
+func writeLines(file string, lines []string) (err error) {
+	f, err := os.Create(file)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	w := bufio.NewWriter(f)
+	defer w.Flush()
+	for _, line := range lines {
+		_, err := w.WriteString(line)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func main() {
-	file, err := os.Open("input.txt")
+	lines, err := readLines("input.txt")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
+		os.Exit(1)
 	}
-	data, err := ioutil.ReadAll(file)
+	sort.Strings(lines)
+	err = writeLines("output.txt", lines)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
+		os.Exit(1)
 	}
-	fmt.Printf("Data as string: %s\n", data)
 }
