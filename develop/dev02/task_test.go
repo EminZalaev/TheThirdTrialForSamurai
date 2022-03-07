@@ -32,8 +32,8 @@ func TestFind(t *testing.T) {
 			expected: "a",
 		},
 		{
-			arg:      "b2",
-			expected: "bb",
+			arg:      "b2a",
+			expected: "bba",
 		},
 	}
 
