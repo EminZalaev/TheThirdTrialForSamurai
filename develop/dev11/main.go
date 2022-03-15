@@ -161,22 +161,24 @@ func renderJSON(w http.ResponseWriter, v interface{}) {
 	w.Write(js)
 }
 
-func configureRoutes(mux *http.ServeMux, ss *storeServer) {
-	mux.HandleFunc("/create_event", ss.handlerCreateEvent)
-	mux.HandleFunc("/update_event", ss.handlerUpdateEvent)
-	mux.HandleFunc("/delete_event", ss.handlerDeleteEvent)
-	mux.HandleFunc("/events_for_day", ss.handlerEventsForDay)
-	mux.HandleFunc("/events_for_week", ss.handlerEventsForWeek)
-	mux.HandleFunc("/events_for_month", ss.handlerEventsForMonth)
+func configureRoutes(serveMux *http.ServeMux, storeServer *storeServer) {
+	serveMux.HandleFunc("/create_event", storeServer.handlerCreateEvent)
+	serveMux.HandleFunc("/update_event", storeServer.handlerUpdateEvent)
+	serveMux.HandleFunc("/delete_event", storeServer.handlerDeleteEvent)
+	serveMux.HandleFunc("/events_for_day", storeServer.handlerEventsForDay)
+	serveMux.HandleFunc("/events_for_week", storeServer.handlerEventsForWeek)
+	serveMux.HandleFunc("/events_for_month", storeServer.handlerEventsForMonth)
 }
 
 func main() {
 
-	mux := http.NewServeMux()
-	ss := newStoreServer()
-	configureRoutes(mux, ss)
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "index.html")
+	serveMux := http.NewServeMux()
+	storeServer := newStoreServer()
+	configureRoutes(serveMux, storeServer)
+
+	serveMux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./tmpl/index.html")
 	})
-	log.Fatal(http.ListenAndServe("localhost:8080", mux))
+
+	log.Fatal(http.ListenAndServe("localhost:8081", serveMux))
 }
