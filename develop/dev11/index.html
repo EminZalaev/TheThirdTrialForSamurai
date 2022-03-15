@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .b1 {
+        background: navy; /* Синий цвет фона */
+        color: white; /* Белые буквы */
+        font-size: 9pt; /* Размер шрифта в пунктах */
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form method="post" action="create_event">
+    <input type="date" name="date">
+    <input type="text" name="mes">
+    <input type="submit" class="b1" value="Создать событие">
+</form>
+
+<form method="post" action="update_event">
+    <input type="text" name="id">
+    <input type="date" name="date">
+    <input type="text" name="mes">
+    <input type="submit" class="b1" value="Изменить событие">
+</form>
+
+<form method="post" action="delete_event">
+    <input type="text" name="id">
+    <input type="submit" class="b1" value="Удалить событие">
+</form>
+
+<form method="get" action="events_for_day">
+    <input type="date" name="date">
+    <input type="submit" class="b1" value="Показать событие за день">
+</form>
+
+<form method="get" action="events_for_week">
+    <input type="date" name="date">
+    <input type="submit" class="b1" value="Показать событие за неделю">
+</form>
+
+<form method="get" action="events_for_month">
+    <input type="date" name="date">
+    <input type="submit" class="b1" value="Показать событие за месяц">
+</form>
+</body>
+</html>
