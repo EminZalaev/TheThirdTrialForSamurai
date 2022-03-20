@@ -45,13 +45,9 @@ func main() {
 	// читаем файл и данные преобразуем в сроковый слайс
 	dataFile := readingFile("in.txt")
 
-	//если флаг дублей активен, убираем из слайка дубли
-	if *u {
-		dataFile = uniqueString(dataFile)
-	}
-
 	switch {
-
+	case *u:
+		dataFile = uniqueString(dataFile)
 	//case *k != "1234": // кейс обрабатывает случай, если колонка была указана. так же внутри кейса проверяются и другие ключи
 	//	dataFile = specifyingColumnSort(dataFile, *k, !*r)
 	//
