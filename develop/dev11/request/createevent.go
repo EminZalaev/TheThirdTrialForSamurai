@@ -45,7 +45,7 @@ func (ss *StoreServer) CreateEvent(date time.Time, mes string) int {
 func (ss *StoreServer) DeleteEvent(id int) error {
 	ss.m.Lock()
 	defer ss.m.Unlock()
-	// вернем ошибку если элемента нет
+
 	if reflect.DeepEqual(ss.store[id], EventCalendar{}) {
 		return errors.New("503: No event for delete")
 	}
@@ -61,7 +61,7 @@ func (ss *StoreServer) EventsForDay(date time.Time, days int) ([]EventCalendar, 
 			result = append(result, event)
 		}
 	}
-	// вернем ошибку если элементы не были надены
+
 	if len(result) == 0 {
 		return []EventCalendar{}, errors.New("503: Invalid event")
 	}

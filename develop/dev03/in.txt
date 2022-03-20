@@ -1,0 +1,4 @@
+600 200 555 1 2
+xxx 22 vv mm all
+zz qq oo a kkkk
+666 111 22 222 1
