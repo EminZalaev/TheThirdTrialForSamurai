@@ -105,9 +105,11 @@ func uniqueString(noneUniqueString []string) []string {
 }
 
 func sortNumeric(unsorted []string) []string {
+
 	for i := range unsorted {
-		l := strings.Split(unsorted[i], " ")
 		var count1 int
+		l := strings.Split(unsorted[i], " ")
+
 		for j := range l {
 			_, err := strconv.Atoi(l[j])
 			if err == nil {
@@ -117,16 +119,18 @@ func sortNumeric(unsorted []string) []string {
 
 		if count1 == len(l) {
 			var result []int
+
 			for j := range l {
 				k, _ := strconv.Atoi(l[j])
 				result = append(result, k)
 			}
+
 			sort.Ints(result)
+
 			for m := range result {
 				l = append(l[:m], strconv.Itoa(result[m]))
 			}
 		}
-
 		unsorted[i] = strings.Join(l, " ")
 	}
 	return unsorted
