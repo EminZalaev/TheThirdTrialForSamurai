@@ -36,9 +36,9 @@ import (
 
 func main() {
 
-	//k := flag.String("k", "1234", "specifying a column to sort")
+	k := flag.Int("k", 0, "enter column")
 	n := flag.Bool("n", false, "sort by numeric value")
-	//r := flag.Bool("r", false, "sort in reverse order")
+	r := flag.Bool("r", false, "sort in reverse order")
 	u := flag.Bool("u", false, "do not output duplicate lines")
 	flag.Parse()
 
@@ -48,13 +48,13 @@ func main() {
 	switch {
 	case *u:
 		dataFile = uniqueString(dataFile)
-	//case *k != "1234": // кейс обрабатывает случай, если колонка была указана. так же внутри кейса проверяются и другие ключи
-	//	dataFile = specifyingColumnSort(dataFile, *k, !*r)
-	//
-	//case *r: // кейс обрабатывает случай если нужна только сортировка в обратном порядке
-	//	dataFile = sortStrings(dataFile, !*r)
-	//
-	case *n: // сортировка численно
+	case *k != 0: // кейс обрабатывает случай, если колонка была указана. так же внутри кейса проверяются и другие ключи
+		dataFile = sortByColumn(dataFile, *k)
+
+	case *r == true: // кейс обрабатывает случай если нужна только сортировка в обратном порядке
+		dataFile = reversSort(dataFile)
+
+	case *n == true: // сортировка численно
 		dataFile = sortNumeric(dataFile)
 	}
 
@@ -130,4 +130,17 @@ func sortNumeric(unsorted []string) []string {
 		unsorted[i] = strings.Join(l, " ")
 	}
 	return unsorted
+}
+
+func reversSort(unsorted []string) []string {
+	sort.Sort(sort.Reverse(sort.StringSlice(unsorted)))
+	return unsorted
+}
+
+func sortByColumn(data []string, colNum int) []string {
+	sort.Slice(data, func(i, j int) bool {
+		return data[i][colNum] < data[j][colNum]
+	})
+
+	return data
 }
