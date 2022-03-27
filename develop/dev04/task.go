@@ -39,7 +39,7 @@ func uniqLower(in *[]string) []string {
 	return res
 }
 
-func anagramDict(in *[]string) *map[string][]string {
+func anagramDict(in *[]string) map[string][]string {
 	if len(*in) < 2 {
 		return nil
 	}
@@ -59,8 +59,6 @@ func anagramDict(in *[]string) *map[string][]string {
 
 	}
 
-	fmt.Println(buff)
-
 	res := make(map[string][]string)
 	for _, words := range buff {
 		if len(words) > 1 {
@@ -69,7 +67,7 @@ func anagramDict(in *[]string) *map[string][]string {
 		}
 	}
 
-	return &res
+	return res
 }
 
 func main() {
