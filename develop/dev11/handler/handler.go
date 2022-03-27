@@ -20,7 +20,7 @@ func NewStoreServer() *StoreServer {
 }
 
 func (ss *StoreServer) HandlerCreateEvent(w http.ResponseWriter, r *http.Request) {
-	_, date, mes, err := HandlerDataPost(w, r)
+	_, date, mes, err := HandlerDataPost(r)
 	if err != nil {
 		http.Error(w, err.Error(), 400)
 		return
@@ -30,7 +30,7 @@ func (ss *StoreServer) HandlerCreateEvent(w http.ResponseWriter, r *http.Request
 }
 
 func (ss *StoreServer) HandlerUpdateEvent(w http.ResponseWriter, r *http.Request) {
-	id, date, mes, err := HandlerDataPost(w, r)
+	id, date, mes, err := HandlerDataPost(r)
 	if err != nil {
 		http.Error(w, err.Error(), 400)
 		return
@@ -45,7 +45,7 @@ func (ss *StoreServer) HandlerUpdateEvent(w http.ResponseWriter, r *http.Request
 }
 
 func (ss *StoreServer) HandlerDeleteEvent(w http.ResponseWriter, r *http.Request) {
-	id, _, _, err := HandlerDataPost(w, r)
+	id, _, _, err := HandlerDataPost(r)
 	if err != nil {
 		http.Error(w, err.Error(), 400)
 		return
@@ -98,7 +98,7 @@ func (ss *StoreServer) HandlerEventsForMonth(w http.ResponseWriter, r *http.Requ
 	RenderJSON(w, events)
 }
 
-func HandlerDataPost(w http.ResponseWriter, r *http.Request) (int, time.Time, string, error) {
+func HandlerDataPost(r *http.Request) (int, time.Time, string, error) {
 	var id int
 	var date time.Time
 	var mes string
