@@ -34,9 +34,9 @@ func main() {
 		return
 	}
 
-	conn, err := net.DialTimeout("tcp", os.Args[3]+":"+os.Args[4], time.Duration(*timeOut)*time.Second)
+	conn, err := net.DialTimeout("tcp", os.Args[3] + ":" + os.Args[4], time.Duration(*timeOut) * time.Second)
 	if err != nil {
-		time.After(10 * time.Second)
+		time.After(time.Duration(*timeOut) * time.Second)
 		fmt.Println("Wrong server ip")
 		return
 	}
