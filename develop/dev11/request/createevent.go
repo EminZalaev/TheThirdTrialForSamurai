@@ -41,11 +41,13 @@ func (ss *StoreServer) DeleteEvent(id int) error {
 	}
 
 	delete(ss.store, id)
+
 	return nil
 }
 
 func (ss *StoreServer) EventsForDay(date time.Time, days int) ([]EventCalendar, error) {
 	var result []EventCalendar
+
 	for _, event := range ss.store {
 		if event.Date.Sub(date) >= time.Duration(days*time.Now().Day()) {
 			result = append(result, event)

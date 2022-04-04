@@ -90,7 +90,6 @@ func (ss *StoreServer) HandlerEventsForMonth(w http.ResponseWriter, r *http.Requ
 		http.Error(w, err.Error(), 503)
 		return
 	}
-
 	RenderJSON(w, events)
 }
 

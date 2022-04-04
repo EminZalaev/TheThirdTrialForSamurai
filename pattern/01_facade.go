@@ -1,4 +1,4 @@
-package pattern
+package main
 
 /*
 	Реализовать паттерн «фасад».
@@ -91,15 +91,14 @@ func (facade *BranchManagerFacade) createTransaction(srcAccountId string, destAc
 
 }
 
-//
-////main method
-//func main() {
-//	var facade = NewBranchManagerFacade()
-//	var customer *Customer
-//	var account *Account
-//	customer, account = facade.createCustomerAccount("Thomas Smith", "Savings")
-//	fmt.Println(customer.name)
-//	fmt.Println(account.accountType)
-//	var transaction = facade.createTransaction("21456", "87345", 1000)
-//	fmt.Println(transaction.amount)
-//}
+//main method
+func main() {
+	var facade = NewBranchManagerFacade()
+	var customer *Customer
+	var account *Account
+	customer, account = facade.createCustomerAccount("Thomas Smith", "Savings")
+	fmt.Println(customer.name)
+	fmt.Println(account.accountType)
+	var transaction = facade.createTransaction("21456", "87345", 1000)
+	fmt.Println(transaction.amount)
+}

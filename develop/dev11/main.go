@@ -2,9 +2,9 @@ package main
 
 import (
 	"dev11/handler"
+	"dev11/middleware"
 	"log"
 	"net/http"
-	"time"
 )
 
 func configureRoutes(serveMux *http.ServeMux, storeServer *handler.StoreServer) {
@@ -26,15 +26,7 @@ func main() {
 		http.ServeFile(w, r, "./tmpl/index.html")
 	})
 
-	handler := Logging(serveMux)
+	handler := middleware.Logging(serveMux)
 
 	log.Fatal(http.ListenAndServe("localhost:8081", handler))
-}
-
-func Logging(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-		start := time.Now()
-		next.ServeHTTP(w, req)
-		log.Printf("%s %s %s", req.Method, req.RequestURI, time.Since(start))
-	})
 }
