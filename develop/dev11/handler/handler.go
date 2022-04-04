@@ -10,10 +10,6 @@ import (
 	"time"
 )
 
-type StoreServer struct {
-	store *request.StoreServer
-}
-
 func NewStoreServer() *StoreServer {
 	store := request.NewStore()
 	return &StoreServer{store: store}
@@ -130,16 +126,17 @@ func HandlerDataPost(r *http.Request) (int, time.Time, string, error) {
 }
 
 func HandlerDataGet(r *http.Request) time.Time {
+
 	dateF := r.FormValue("date") + "T00:00:00Z"
 	date, err := time.Parse(time.RFC3339, dateF)
 	if err != nil {
 		fmt.Println(err)
 	}
+
 	return date
 }
 
 func RenderJSON(w http.ResponseWriter, v interface{}) {
-	fmt.Printf("request: %v\n", v)
 
 	resultJSON := struct {
 		Result interface{}

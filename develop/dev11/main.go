@@ -4,6 +4,7 @@ import (
 	"dev11/handler"
 	"log"
 	"net/http"
+	"time"
 )
 
 func configureRoutes(serveMux *http.ServeMux, storeServer *handler.StoreServer) {
@@ -25,5 +26,15 @@ func main() {
 		http.ServeFile(w, r, "./tmpl/index.html")
 	})
 
-	log.Fatal(http.ListenAndServe("localhost:8081", serveMux))
+	handler := Logging(serveMux)
+
+	log.Fatal(http.ListenAndServe("localhost:8081", handler))
+}
+
+func Logging(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+		start := time.Now()
+		next.ServeHTTP(w, req)
+		log.Printf("%s %s %s", req.Method, req.RequestURI, time.Since(start))
+	})
 }

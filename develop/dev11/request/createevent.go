@@ -14,16 +14,6 @@ func NewStore() *StoreServer {
 	return ss
 }
 
-type EventCalendar struct {
-	Date time.Time
-	Mes  string
-}
-
-type StoreServer struct {
-	m     sync.Mutex
-	store map[int]EventCalendar
-}
-
 func (ss *StoreServer) CreateEvent(date time.Time, mes string) int {
 
 	event := EventCalendar{date, mes}
