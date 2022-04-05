@@ -5,6 +5,15 @@ package main
 Объяснить применимость паттерна, его плюсы и минусы,а также реальные примеры использования данного примера на практике.
 	https://en.wikipedia.org/wiki/Facade_pattern
 */
+
+//простой интерфейс в сложной системе
+
+//сокрытие сложной бизнес логики и даем разработчику минимум функционала
+//плюсы
+//изоляция от поведения сложной подсистемы
+//минус
+//может стать суперобъектом и будет привязка к этому объекту, все последующие функции будут проходить через этот объект
+
 import (
 	"fmt"
 )
@@ -96,9 +105,11 @@ func main() {
 	var facade = NewBranchManagerFacade()
 	var customer *Customer
 	var account *Account
+
 	customer, account = facade.createCustomerAccount("Thomas Smith", "Savings")
 	fmt.Println(customer.name)
 	fmt.Println(account.accountType)
+
 	var transaction = facade.createTransaction("21456", "87345", 1000)
 	fmt.Println(transaction.amount)
 }
