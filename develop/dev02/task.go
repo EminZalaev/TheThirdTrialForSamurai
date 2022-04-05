@@ -28,6 +28,7 @@ func unpackString(strings string) string {
 	runeString := []rune(strings)
 	stringEdited := ""
 	var k int
+
 	if len(runeString) == 0 || unicode.IsDigit(runeString[0]) {
 		return ""
 	}
@@ -48,6 +49,7 @@ func unpackString(strings string) string {
 	if unicode.IsLetter(runeString[len(runeString)-1]) == true {
 		stringEdited += string(runeString[len(runeString)-1])
 	}
+	
 	return stringEdited
 }
 
