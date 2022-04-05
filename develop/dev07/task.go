@@ -77,5 +77,6 @@ func merge(cs ...<-chan interface{}) <-chan interface{} {
 			}
 		}
 	}()
+
 	return test
 }
