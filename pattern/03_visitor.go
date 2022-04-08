@@ -8,7 +8,7 @@ import "fmt"
 	https://en.wikipedia.org/wiki/Visitor_pattern
 */
 
-//Используем паттерн посетителя, чтобы «внедрить» новые операции в существующие структуры объектов без изменения структур.
+//Используем паттерн посетителя, чтобы внедрить новые операции в существующие структуры объектов без изменения структур.
 
 func main() {
 
@@ -49,6 +49,7 @@ type Director struct {
 func (d Director) FullName() {
 	fmt.Println("Director ", d.FirstName, " ", d.LastName)
 }
+
 func (d Director) Accept(v Visitor) {
 	v.VisitDirector(d)
 }

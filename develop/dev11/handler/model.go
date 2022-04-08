@@ -1,7 +1,7 @@
 package handler
 
-import "dev11/request"
+import "dev11/service"
 
 type StoreServer struct {
-	store *request.StoreServer
+	store *service.StoreServer
 }

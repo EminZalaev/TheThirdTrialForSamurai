@@ -1,4 +1,4 @@
-package request
+package service
 
 import (
 	"sync"

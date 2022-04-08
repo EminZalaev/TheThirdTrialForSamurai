@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"dev11/request"
+	"dev11/service"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -11,7 +11,7 @@ import (
 )
 
 func NewStoreServer() *StoreServer {
-	store := request.NewStore()
+	store := service.NewStore()
 	return &StoreServer{store: store}
 }
 
@@ -21,6 +21,7 @@ func (ss *StoreServer) HandlerCreateEvent(w http.ResponseWriter, r *http.Request
 		http.Error(w, err.Error(), 400)
 		return
 	}
+
 	id := ss.store.CreateEvent(date, mes)
 	RenderJSON(w, id)
 }
@@ -37,6 +38,7 @@ func (ss *StoreServer) HandlerUpdateEvent(w http.ResponseWriter, r *http.Request
 		http.Error(w, err.Error(), 503)
 		return
 	}
+
 	RenderJSON(w, event)
 }
 
@@ -54,7 +56,6 @@ func (ss *StoreServer) HandlerDeleteEvent(w http.ResponseWriter, r *http.Request
 	}
 
 	RenderJSON(w, "Element deleted")
-
 }
 
 func (ss *StoreServer) HandlerEventsForDay(w http.ResponseWriter, r *http.Request) {
@@ -90,6 +91,7 @@ func (ss *StoreServer) HandlerEventsForMonth(w http.ResponseWriter, r *http.Requ
 		http.Error(w, err.Error(), 503)
 		return
 	}
+
 	RenderJSON(w, events)
 }
 
