@@ -6,6 +6,8 @@ package main
 	https://en.wikipedia.org/wiki/Strategy_pattern
 */
 
+//В зависимости от нужды бизнес логики определяем разное поведение
+
 func main() {
 	product := "vehicle"
 	payWay := 3
