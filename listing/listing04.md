@@ -10,7 +10,6 @@ func main() {
 			ch <- i
 		}
 	}()
-
 	for n := range ch {
 		println(n)
 	}

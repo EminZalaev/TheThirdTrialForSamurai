@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d3a2e7a6-e704-4566-aefe-cc0eb529f03d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pattern/07_strategy.go" beforeDir="false" afterPath="$PROJECT_DIR$/pattern/07_strategy.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pattern/08_state.go" beforeDir="false" afterPath="$PROJECT_DIR$/pattern/08_state.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/develop/dev03/in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dev03/in.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/develop/dev03/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dev03/out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/develop/dev07/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dev07/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listing/listing04.md" beforeDir="false" afterPath="$PROJECT_DIR$/listing/listing04.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build github.com/EminZalaev/TheThirdTrialForSamurai/tree/main/develop/dev01/develop/dev06">
     <configuration name="go build dev11" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="TheThirdTrialForSamurai" />
       <working_directory value="$PROJECT_DIR$/develop/dev11" />
@@ -73,6 +74,15 @@
       <package value="dev11" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/develop/dev11/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/EminZalaev/TheThirdTrialForSamurai/tree/main/develop/dev01/develop/dev06" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="TheThirdTrialForSamurai" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/EminZalaev/TheThirdTrialForSamurai/tree/main/develop/dev01/develop/dev06" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/develop/dev06/task.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -104,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/EminZalaev/TheThirdTrialForSamurai/tree/main/develop/dev01/develop/dev06" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build dev11" />
         <item itemvalue="Go Build.go build task.go (1)" />

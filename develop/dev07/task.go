@@ -59,7 +59,7 @@ func main() {
 		sig(1*time.Second),
 	)
 	<-test
-	fmt.Printf("fone after %v", time.Since(start))
+	fmt.Printf("done after %v", time.Since(start))
 }
 
 func merge(cs ...<-chan interface{}) <-chan interface{} {
