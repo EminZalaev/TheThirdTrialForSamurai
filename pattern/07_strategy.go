@@ -33,13 +33,9 @@ func processOrder(product string, payment Payment) {
 	}
 }
 
-// ----
-
 type Payment interface {
 	Pay() error
 }
-
-// ----
 
 type cardPayment struct {
 	cardNumber, cvv string

@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d3a2e7a6-e704-4566-aefe-cc0eb529f03d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/develop/dev03/in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dev03/in.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/develop/dev03/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dev03/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/develop/dev07/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dev07/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listing/listing04.md" beforeDir="false" afterPath="$PROJECT_DIR$/listing/listing04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/develop/dev10/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/develop/dev10/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/01_facade.go" beforeDir="false" afterPath="$PROJECT_DIR$/pattern/01_facade.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/02_builder.go" beforeDir="false" afterPath="$PROJECT_DIR$/pattern/02_builder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/04_command.go" beforeDir="false" afterPath="$PROJECT_DIR$/pattern/04_command.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/05_chain_of_resp.go" beforeDir="false" afterPath="$PROJECT_DIR$/pattern/05_chain_of_resp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/07_strategy.go" beforeDir="false" afterPath="$PROJECT_DIR$/pattern/07_strategy.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

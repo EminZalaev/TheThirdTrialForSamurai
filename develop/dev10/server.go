@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	ln, err := net.Listen("tcp", "127.0.0.1:8083")
+	ln, err := net.Listen("tcp", "localhost:8083")
 	if err != nil {
 		fmt.Println("Cannot start server")
 	}
